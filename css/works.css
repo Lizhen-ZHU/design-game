@@ -17,3 +17,7 @@
 .loading {
   text-align: center;
 }
+
+.wrap.loading {
+  cursor: wait;
+}

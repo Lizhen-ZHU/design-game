@@ -34,6 +34,11 @@ $('body').click(()=>{
 // submit the form
 $('form').submit((e)=>{
   e.preventDefault();
+
+  //disable the button to prevent submit again
+  let $shareBtn = $('form').find('.classic-btn');
+  $shareBtn.addClass('disabled').attr('placeholder', 'sharing, please wait...');
+
   //get the name;
   let name = $('form').find('.name input')[0].value;
   if(name.trim().length === 0) {
@@ -44,6 +49,9 @@ $('form').submit((e)=>{
   API.addPicture(name,imageData)
     .then(e=>{
       jQuery.notify(`Thanks ${name}, your work is shared successfully`,'success');
+
+      // recover the share button
+      $shareBtn.removeClass('disabled').attr('placeholder', 'share your work');
       //clear the input
       $('form').find('.name input')[0].value = '';
 

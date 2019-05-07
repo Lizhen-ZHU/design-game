@@ -7,23 +7,33 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/works.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
 </head>
 <body>
 
+
   <div id="app" style="background: #F5F9FE;">
-    <div>
+    <div :class="{wrap:true, loading: loading}">
       <div class="loading" v-if="loading">
         <img src="https://cdn.dribbble.com/users/1162077/screenshots/5388344/gears-animation.gif" alt="">
       </div>
-      <div class="flex work-wrap flex-wrap" v-else>
-          <div class="each-work flex flex-column align-center" v-for="(i, index) in allWorks" :key="index">
+      <div v-else>
+        <h1>All works from the world</h1>
+        <div class="flex work-wrap flex-wrap" >
+          <div class="each-work flex flex-column align-center" v-for="(i, index) in allWorks" :key="i.id">
               <img :src="i.imgCode" alt="i.username">
-              <div class="flex align-center justify-center">{{i.username}}</div>
+              <div class="flex align-center justify-center">
+                <div>
+                    {{i.username}}
+                </div>
+              </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>

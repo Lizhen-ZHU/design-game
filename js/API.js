@@ -18,7 +18,8 @@ firebase.initializeApp(firebaseConfig);
 let addPicture = (name, imgCode)=> {
   return firebase.database().ref('works/').push({
     username: name,
-    imgCode 
+    imgCode,
+    createdAt: firebase.database.ServerValue.TIMESTAMP
   })
 }
 

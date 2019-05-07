@@ -12,21 +12,31 @@ let vue = new Vue({
   },
   methods: {
     getAllPictures() {
-      this.loading = true;
       this.allWorks = [];
+      let works = [];
       API.getAllPictures()
       .then(data=>{
         for(let i in data) {
-          this.allWorks.push(data[i])
+          works.push({...data[i], id:i})
         }
-        this.loading = false
+        works = works.reverse();
+        this.allWorks = works;
+        this.loading = false;
       })
-    }
+    },
   },
 
   created() {
+    this.loading = true;
     //observe and decide whether to get new data
     window.updateData = ()=>{
+      this.loading = true;
+      new Noty({
+        theme: 'nest',
+        layout: 'topLeft',
+        text: 'Some one is creating new costume and the page is updated',
+        timeout: 3000
+      }).show();
       this.getAllPictures();
     }
     
@@ -35,3 +45,10 @@ let vue = new Vue({
 
 
 })
+
+
+
+
+
+
+// utility

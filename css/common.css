@@ -139,6 +139,11 @@
   border: 1px solid #222;
 }
 
+.modal div form .classic-btn.disabled {
+  pointer-events: none;
+  cursor: wait;
+}
+
 input.classic-btn, button.classic-btn {
   padding: 8px 9px;
   background: #eec106;
