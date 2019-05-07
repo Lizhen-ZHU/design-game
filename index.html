@@ -55,10 +55,10 @@
 								Your Name
 								<input type="text" placeholder="Your Name">
 						</label>
-						<input class="classic" type="submit" value="Share Your Work">
+						<input class="classic-btn" type="submit" value="Share Your Work">
 
 						<div class="view-link align-self-end">
-								<a target="_blank" href="/works.html">View other people's work</a>
+								<a target="_blank" href="./works.html">View other people's work</a>
 						</div>
 					</form>
 			</div>
@@ -89,7 +89,7 @@
 							<p>Choose accessory from each category.<p>
 						</div>
 						<div class="cart-wrapper relative"  id="capture">
-							<button id="save" class="classic">save</button>
+							<button id="save" class="classic-btn">save</button>
 							<!-- *cart-wrapper starts here** -->
 							<div class="dt-sc-three-fifth column first">
 								<div class="cart-thumb">
@@ -547,9 +547,9 @@
 			});
 
 			$("#modern").click(function() {
-				showAndHide('modern');
-				// $(".classic").hide();
-				// $(".modern").show();
+				// showAndHide('modern');
+				$(".classic").hide();
+				$(".modern").show();
 
 			});
 

@@ -134,12 +134,12 @@
   padding: 50px;
 }
 
-.modal div form .classic {
+.modal div form .classic-btn {
   margin-top: 2em;
   border: 1px solid #222;
 }
 
-input.classic, button.classic {
+input.classic-btn, button.classic-btn {
   padding: 8px 9px;
   background: #eec106;
   font-family: 'PT Sans Narrow', sans-serif;
