@@ -1,0 +1,157 @@
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-space-around {
+  justify-content: space-around;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+/* POSITION */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.sticky {
+  position: sticky;
+}
+/* FULLBOX */
+.full {
+  width: 100%;
+  height: 100%;
+}
+/* CENTER IN ABSOLUTE */
+.ab-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* SHAPE */
+.circle {
+  border-radius: 50%;
+}
+.triangle-right {
+  width: 0px;
+  border: 16px solid;
+  border-color: inherit;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.triangle-left {
+  width: 0px;
+  border: 16px solid;
+  border-color: inherit;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.triangle-down {
+  width: 0px;
+  border: 16px solid;
+  border-color: inherit;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.triangle-up {
+  width: 0px;
+  border: 16px solid;
+  border-color: inherit;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+
+.relative {
+  position: relative;
+}
+.fixed {
+  position: fixed;
+}
+.hide {
+  display: none;
+}
+.modal {
+  width: 60%;
+  min-width: 300px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #eec106;
+  z-index: 10;
+}
+.cover {
+  transition: filter 1s;
+  z-index: 9;
+}
+
+.cover.active {
+  filter: blur(4px);
+}
+.modal div {
+  height: 100%;
+}
+.modal div img {
+  height: 95%;
+  margin-right: 30px;
+}
+.modal div form {
+  padding: 50px;
+}
+
+.modal div form .classic {
+  margin-top: 2em;
+  border: 1px solid #222;
+}
+
+input.classic, button.classic {
+  padding: 8px 9px;
+  background: #eec106;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.view-link {
+  height: 100px;
+}
+.view-link a {
+  text-decoration: underline;
+}

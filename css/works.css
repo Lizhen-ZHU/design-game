@@ -1,0 +1,19 @@
+.each-work {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ddd;
+}
+
+.each-work > img {
+  height: 80%;
+}
+
+.each-work > div {
+  flex: auto;
+  background: #eec106;
+  width: 100%;
+}
+
+.loading {
+  text-align: center;
+}

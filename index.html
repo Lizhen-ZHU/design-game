@@ -17,6 +17,7 @@
 
 
 
+	<link rel="stylesheet" href="./css/common.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -40,48 +41,6 @@
 
 	<!-- **Font Awesome** -->
 	<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-	<style>
-		.relative {
-			position: relative;
-		}
-		.fixed {
-			position: fixed;
-		}
-		.hide {
-			display: none;
-		}
-		.modal {
-			width: 60%;
-			min-width: 300px;
-			height: 600px;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			background: #eec106;
-			z-index: 10;
-		}
-		.cover {
-			transition: filter 1s;
-			z-index: 9;
-		}
-
-		.cover.active {
-			filter: blur(4px);
-		}
-
-		.modal img {
-			height: 95%;
-		}
-		button.classic {
-			padding: 8px 9px;
-			background: #eec106;
-			font-family: 'PT Sans Narrow', sans-serif;
-			text-transform: uppercase;
-			border: none;
-			cursor: pointer;
-			font-size: 1em;
-		}
-	</style>
 </head>
 
 <body>
@@ -89,8 +48,20 @@
 	<!-- **Wrapper** -->
 	<div class="wrapper relative">
 		<div class="fixed modal hide">
-			<img src="javascript:;" alt="generatedImage">
-			
+			<div class="flex">
+					<img src="javascript:;" alt="generatedImage">
+					<form class="flex-1 flex flex-column">
+						<label class="name">
+								Your Name
+								<input type="text" placeholder="Your Name">
+						</label>
+						<input class="classic" type="submit" value="Share Your Work">
+
+						<div class="view-link align-self-end">
+								<a target="_blank" href="/works.html">View other people's work</a>
+						</div>
+					</form>
+			</div>
 		</div>
 
 		<div class="inner-wrapper cover">
@@ -576,8 +547,9 @@
 			});
 
 			$("#modern").click(function() {
-				$(".classic").hide();
-				$(".modern").show();
+				showAndHide('modern');
+				// $(".classic").hide();
+				// $(".modern").show();
 
 			});
 
@@ -606,40 +578,12 @@
 				showAndHide('shoe');
 			});
 		});
-
-
-
-		let $modal = $('.modal');
-		$('#save').click(()=>{
-			html2canvas(document.querySelector("#capture")).then(canvas => {
-				var new_canvas = document.createElement('canvas');
-				new_canvas.width = 900;
-				new_canvas.height = 1800;
-				new_canvas.getContext('2d').drawImage(canvas, 150, 100);
-				var img = new_canvas.toDataURL("image/png");
-				// activate cover
-				$('.cover').addClass('active');
-
-				// show modal
-				$modal.find('img').attr('src',img)
-				$modal.fadeIn()
-					// document.body.appendChild(canvas)
-			});
-		})
-
-		$modal.click((e)=>{
-			e.stopPropagation();
-		})
-
-		$('body').click(()=>{
-			$modal.fadeOut();
-
-			$('.cover').removeClass('active');
-		})
-
-
-
 	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+	<script src="./js/API.js" type="module"></script>
+	<script src="./js/savePic.js" type="module"></script>
 
 </body>
 
